@@ -13,14 +13,14 @@ export default function Answers({answers, selectedAnswer, answerState, onSelect}
             const isSelected = selectedAnswer === answer//check if the answer is selected - see handleSelectAnswer() function
             let cssClass = '';
             if(answerState === 'answered' && isSelected) {
-                    cssClass = 'selected'
+                    cssClass = 'selected';
             }
             if((answerState === 'correct'||answerState ==='wrong') && isSelected) {
-                cssClass = answerState
+                cssClass = answerState;
             }
                return (
                <li key={answer} className="answer">
-               <button onClick={() => onSelect(answer)} className={cssClass}>{answer}</button>
+               <button onClick={() => onSelect(answer)} className={cssClass} >{answer}</button>
                 </li>
            );
         }             
