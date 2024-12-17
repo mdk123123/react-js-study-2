@@ -26,8 +26,8 @@ export default function Quiz() {
                 setAnswerState('wrong');
             }
             setTimeout(() => {
-                setAnswerState('')
-            })
+                setAnswerState('');
+            }, 2000);
 
         }, 1000)
     }, [activeQuestionIndex]);

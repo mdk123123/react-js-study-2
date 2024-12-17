@@ -18,7 +18,7 @@ export default function Answers({answers, selectedAnswer, answerState, onSelect}
             if((answerState === 'correct'||answerState ==='wrong') && isSelected) {
                 cssClass = answerState;
             }
-               return (
+            return (
                <li key={answer} className="answer">
                <button onClick={() => onSelect(answer)} className={cssClass} >{answer}</button>
                 </li>
