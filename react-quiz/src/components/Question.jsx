@@ -4,12 +4,14 @@ import QUESTIONS from '../question.js'
 import { useState } from "react";
 
 export default function Question({questionIndex,onSelectAnswer, onSkipAnswer}) {
-    
+    console.log(questionIndex);
+    console.log(QUESTIONS[questionIndex].answers);
     const [answer, setAnswer] = useState({selectedAnswer: '',
         isCorrect: null
     })
     
     function handleSelectAnswer(answer) {
+  
         setAnswer({
             selectedAnswer: answer,
             isCorrect: null
@@ -19,11 +21,13 @@ export default function Question({questionIndex,onSelectAnswer, onSkipAnswer}) {
         setTimeout(() => {
             setAnswer({
                 selectedAnswer: answer,
-                isCorrect: QUESTIONS[questionIndex].answers[0] === answer
+                isCorrect: QUESTIONS[questionIndex].answers[0] === answer,
             });
-
-            setTimeout(() => {onSelectAnswer(answer);}, 2000);// so not move away immediately
-        }, 1000)
+    
+            setTimeout(() => {
+                onSelectAnswer(answer); // Correctly invoke the parent callback
+            }, 2000);
+        }, 1000);
     }
 
     let answerState = '';
