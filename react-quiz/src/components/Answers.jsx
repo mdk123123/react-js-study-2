@@ -9,7 +9,7 @@ export default function Answers({answers, selectedAnswer, answerState, onSelect}
     }
     
     return (<ul id="answers">
-        {answers.map((answer)=>{
+        {shuffledAnswers.current.map((answer)=>{
             const isSelected = selectedAnswer === answer//check if the answer is selected - see handleSelectAnswer() function
             let cssClass = '';
             if(answerState === 'answered' && isSelected) {
